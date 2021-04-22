@@ -15,6 +15,9 @@ class MyApp extends StatelessWidget {
 }
 
 class QuizScreen extends StatelessWidget {
+  final rightAnswerColor = 0xFF28A745;
+  final wrongAnswerColor = 0xFFDC3545;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,17 +59,97 @@ class QuizScreen extends StatelessWidget {
             Expanded(
               child: Container(
                   height: 400,
+                  width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
                     color: Color.fromRGBO(255, 255, 255, 0.5),
                   ),
                   child: Container(
-                    margin: EdgeInsets.only(left: 18, right: 18),
-                    child: Text(
-                      "Quem é esse Pokémon?",
-                      style: TextStyle(
-                          fontFamily: "Pokemon",
-                          fontSize: 28,
-                          letterSpacing: 2),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(top: 20),
+                          child: Text(
+                            "Quem é esse Pokémon?",
+                            style: TextStyle(
+                                fontFamily: "Pokemon",
+                                fontSize: 28,
+                                letterSpacing: 2),
+                          ),
+                        ),
+                        Container(
+                            margin: EdgeInsets.only(top: 50),
+                            child: Column(
+                              children: [
+                                Container(
+                                  width:
+                                      (MediaQuery.of(context).size.width) - 50,
+                                  child: ElevatedButton(
+                                    onPressed: () {
+                                      print("Button Pressed");
+                                    },
+                                    child: Text("Charizard"),
+                                    style: ButtonStyle(
+                                      backgroundColor:
+                                          MaterialStateProperty.all<Color>(
+                                              Color(rightAnswerColor)),
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  width:
+                                      (MediaQuery.of(context).size.width) - 50,
+                                  child: ElevatedButton(
+                                    onPressed: () {
+                                      print("Button Pressed");
+                                    },
+                                    child: Text("Squirtle"),
+                                    style: ButtonStyle(
+                                      backgroundColor:
+                                          MaterialStateProperty.all<Color>(
+                                              Color(wrongAnswerColor)),
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  width:
+                                      (MediaQuery.of(context).size.width) - 50,
+                                  child: ElevatedButton(
+                                    onPressed: () {
+                                      print("Button Pressed");
+                                    },
+                                    child: Text(
+                                      "Dragonite",
+                                      style: TextStyle(color: Colors.black),
+                                    ),
+                                    style: ButtonStyle(
+                                      backgroundColor:
+                                          MaterialStateProperty.all<Color>(
+                                              Colors.white),
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  width:
+                                      (MediaQuery.of(context).size.width) - 50,
+                                  child: ElevatedButton(
+                                    onPressed: () {
+                                      print("Button Pressed");
+                                    },
+                                    child: Text(
+                                      "Dragonite",
+                                      style: TextStyle(color: Colors.black),
+                                    ),
+                                    style: ButtonStyle(
+                                      backgroundColor:
+                                          MaterialStateProperty.all<Color>(
+                                              Colors.white),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            )),
+                      ],
                     ),
                   )),
             ),
