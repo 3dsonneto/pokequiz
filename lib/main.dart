@@ -37,9 +37,9 @@ class QuizScreen extends StatelessWidget {
                   "assets/images/banner.jpg",
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 80, left: 10),
-                  width: 130,
-                  height: 130,
+                  margin: EdgeInsets.only(top: 30),
+                  width: 200,
+                  height: 200,
                   child: ShaderMask(
                     shaderCallback: (Rect bounds) {
                       return RadialGradient(
@@ -137,7 +137,7 @@ class QuizScreen extends StatelessWidget {
                                       print("Button Pressed");
                                     },
                                     child: Text(
-                                      "Dragonite",
+                                      "Chikorita",
                                       style: TextStyle(color: Colors.black),
                                     ),
                                     style: ButtonStyle(
